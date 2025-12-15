@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Variables para colores de neón */
+:root {
+    --bg-dark: #1e003c;
+    --neon-pink: #ff00ff;
+    --neon-cyan: #00ffff;
+    --neon-green: #39ff14;
+    --border-glow: #ffcc00;
+    --font-retro: 'VT323', monospace;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--neon-cyan);
+    font-family: var(--font-retro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-size: 1.2em;
+    background-image: repeating-linear-gradient(0deg, var(--bg-dark), var(--bg-dark) 1px, rgba(0, 0, 0, 0.2) 2px, var(--bg-dark) 3px);
+}
+
+header {
+    margin-bottom: 60px;
+    padding: 0px 20px;
+    border: 3px solid var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink), 0 0 25px var(--neon-pink) inset;
+    background-color: rgba(0, 255, 255, 0.1);
+}
+
+header h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 15px var(--neon-green);
+    letter-spacing: 8px;
+}
+
+main {
+    width: 100%;
+    max-width: 550px;
+    background-color: #000000;
+    padding: 25px;
+    border: 4px solid var(--border-glow);
+    box-shadow: 0 0 20px var(--border-glow);
+    animation: glow-border 2s infinite alternate;
+}
+
+@keyframes glow-border {
+    from { box-shadow: 0 0 10px var(--border-glow), 0 0 15px var(--border-glow); }
+    to { box-shadow: 0 0 15px var(--border-glow), 0 0 25px var(--border-glow); }
+}
+
+.add-task form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#task-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 2px solid var(--neon-cyan);
+    background-color: #0d001a;
+    color: var(--neon-cyan);
+    font-size: 1em;
+    box-shadow: inset 0 0 8px var(--neon-cyan);
+    outline: none;
+    transition: all 0.2s;
+}
+
+#task-input::placeholder {
+    color: rgba(0, 255, 255, 0.5);
+}
+
+#task-input:focus {
+    border-color: var(--neon-green);
+    box-shadow: inset 0 0 10px var(--neon-green);
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    background-color: var(--neon-pink);
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px var(--neon-pink);
+    font-family: var(--font-retro);
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--neon-cyan), 0 0 25px var(--neon-cyan);
+    transform: scale(1.05);
+}
+
+#clear-all {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+    box-shadow: 0 0 5px var(--neon-pink);
+}
+
+#clear-all:hover {
+    background-color: var(--neon-pink);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#task-list li {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-left: 5px solid var(--neon-cyan);
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 8px var(--neon-cyan) inset;
+    transition: all 0.3s;
+}
+
+#task-list li:hover {
+    border-left-color: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green) inset;
+}
+
+.delete-btn {
+    background-color: var(--neon-pink);
+    color: var(--bg-dark);
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 0.8em;
+    transform: none;
+}
+
+.delete-btn:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+}
